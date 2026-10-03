@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>💖 Para Ti</title>
+
+  <link rel="stylesheet" href="css/variables.css">
+  <link rel="stylesheet" href="css/base.css">
+  <link rel="stylesheet" href="css/animations.css">
+  <link rel="stylesheet" href="css/lock.css">
+</head>
+<body>
+
+<!-- ══════════════════════════════════════
+     PANTALLA DE BLOQUEO
+══════════════════════════════════════ -->
+<div id="pantalla-bloqueo">
+
+  <!-- Orbes de fondo -->
+  <div class="orbe orbe-1"></div>
+  <div class="orbe orbe-2"></div>
+  <div class="orbe orbe-3"></div>
+
+  <!-- Partículas flotantes -->
+  <div id="particulas-bloqueo"></div>
+
+  <!-- Tarjeta central -->
+  <div class="tarjeta-bloqueo">
+
+    <span class="icono-corazon">💖</span>
+
+    <h1 class="titulo-bloqueo">Un lugar solo para ti</h1>
+    <p class="subtitulo-bloqueo">Ingresa la contraseña secreta</p>
+
+    <!-- Campo de contraseña -->
+    <div class="campo-contrasena-wrap">
+      <input
+        type="password"
+        id="campo-contrasena"
+        class="campo-contrasena"
+        placeholder="Tu fecha especial..."
+        maxlength="10"
+        autocomplete="off"
+        spellcheck="false"
+      >
+      <button class="btn-ojo" id="btn-ojo" aria-label="Mostrar contraseña">👁️</button>
+    </div>
+
+    <!-- Botón -->
+    <button class="btn-desbloquear" id="btn-desbloquear">
+      ✨ Entrar
+    </button>
+
+    <!-- Mensaje de error -->
+    <p class="mensaje-error" id="mensaje-error"></p>
+
+    <!-- Pista -->
+    <p class="pista-bloqueo">
+      Pista: <span>una fecha muy especial</span> 🗓️<br>
+      Formato: DD/MM/AAAA o DDMMAAAA
+    </p>
+
+  </div>
+</div>
+
+<!-- Flash de desbloqueo -->
+<div id="flash-desbloqueo"></div>
+
+<!-- Corazones de celebración -->
+<div id="corazones-celebracion"></div>
+
+<script src="js/lock.js"></script>
+</body>
+</html>

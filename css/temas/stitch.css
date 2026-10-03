@@ -1,0 +1,101 @@
+/* ── STITCH ── */
+.stitch-hero {
+  background: radial-gradient(ellipse at 50% 40%, #0c4a6e 0%, #0a0a0f 70%);
+}
+.stitch-badge  { color: #38bdf8; border-color: rgba(56,189,248,0.4); background: rgba(56,189,248,0.08); }
+.stitch-titulo {
+  background: linear-gradient(135deg, #7dd3fc, #38bdf8, #0ea5e9);
+  -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;
+}
+.stitch-card {
+  background: linear-gradient(135deg, #0c2340, #0c4a6e);
+  border: 1px solid rgba(56,189,248,0.3);
+  color: #f0f9ff;
+  box-shadow: 0 8px 32px rgba(56,189,248,0.12);
+}
+.stitch-card-dorso {
+  background: linear-gradient(135deg, #0284c7, #38bdf8);
+  color: #fff;
+}
+.stitch-burbujas { position: absolute; inset: 0; pointer-events: none; overflow: hidden; }
+.stitch-burbuja {
+  position: absolute; border-radius: 50%;
+  border: 1px solid rgba(56,189,248,0.4);
+  animation: flotar ease-in-out infinite;
+}
+
+/* ── SULLEY ── */
+.sulley-hero {
+  background: radial-gradient(ellipse at 50% 40%, #1e3a5f 0%, #0a0a0f 70%);
+}
+.sulley-badge  { color: #60a5fa; border-color: rgba(96,165,250,0.4); background: rgba(96,165,250,0.08); }
+.sulley-titulo {
+  background: linear-gradient(135deg, #93c5fd, #60a5fa, #3b82f6);
+  -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;
+}
+.sulley-card {
+  background: linear-gradient(135deg, #1e3a5f, #1e40af);
+  border: 1px solid rgba(96,165,250,0.3);
+  color: #eff6ff;
+  box-shadow: 0 8px 32px rgba(96,165,250,0.12);
+  position: relative; overflow: hidden;
+}
+.sulley-card::before {
+  content: '';
+  position: absolute; inset: 0;
+  background: radial-gradient(circle at 30% 30%, rgba(96,165,250,0.08), transparent 60%);
+  pointer-events: none;
+}
+.sulley-card-dorso {
+  background: linear-gradient(135deg, #1d4ed8, #60a5fa);
+  color: #fff;
+}
+
+/* ── LOTSO ── */
+.lotso-hero {
+  background: radial-gradient(ellipse at 50% 40%, #4a0020 0%, #0a0a0f 70%);
+}
+.lotso-badge  { color: #f472b6; border-color: rgba(244,114,182,0.4); background: rgba(244,114,182,0.08); }
+.lotso-titulo {
+  background: linear-gradient(135deg, #fbcfe8, #f472b6, #ec4899);
+  -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;
+}
+.lotso-card {
+  background: linear-gradient(135deg, #fff1f2, #ffe4e6);
+  border: 1px solid rgba(244,114,182,0.3);
+  color: #881337;
+  box-shadow: 0 8px 32px rgba(244,114,182,0.15);
+}
+.lotso-card-dorso {
+  background: linear-gradient(135deg, #f43f5e, #fb7185);
+  color: #fff;
+}
+
+/* ── PINGÜINOS ── */
+.ping-hero {
+  background: radial-gradient(ellipse at 50% 40%, #0f2744 0%, #0a0a0f 70%);
+}
+.ping-badge  { color: #bae6fd; border-color: rgba(186,230,253,0.4); background: rgba(186,230,253,0.08); }
+.ping-titulo {
+  background: linear-gradient(135deg, #e0f2fe, #bae6fd, #7dd3fc);
+  -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;
+}
+.ping-card {
+  background: linear-gradient(135deg, #0f2744, #1e3a5f);
+  border: 1px solid rgba(186,230,253,0.25);
+  color: #f0f9ff;
+  box-shadow: 0 8px 32px rgba(186,230,253,0.08);
+}
+.ping-card-dorso {
+  background: linear-gradient(135deg, #0369a1, #7dd3fc);
+  color: #fff;
+}
+.ping-hielo { position: absolute; inset: 0; pointer-events: none; overflow: hidden; }
+.ping-copo {
+  position: absolute;
+  color: rgba(186,230,253,0.5);
+  font-size: 1rem;
+  animation: particula linear infinite;
+}
+
+/* Archivos vacíos requeridos por el HTML */

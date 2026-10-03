@@ -1,0 +1,412 @@
+/* ══════════════════════════════════════════════════════
+   MÓDULO DE POEMAS — GLASSMORPHISM DELUXE
+   Tarjetas · Modal · Tipografía romántica · Animaciones
+══════════════════════════════════════════════════════ */
+
+/* ══ SECCIÓN CONTENEDORA ══ */
+.poemas-seccion {
+  margin-top: 3rem;
+}
+
+.poemas-encabezado {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.poemas-encabezado-titulo {
+  font-family: var(--fuente-romantica);
+  font-size: clamp(2rem, 5vw, 3.2rem);
+  background: var(--grad-amor);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  margin-bottom: 0.4rem;
+  line-height: 1.2;
+}
+
+.poemas-encabezado-sub {
+  font-size: 0.78rem;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  color: rgba(255,255,255,0.3);
+}
+
+/* ══ GRID DE TARJETAS ══ */
+.poemas-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.4rem;
+}
+
+/* ══ TARJETA DE POEMA ══ */
+.poema-tarjeta {
+  position: relative;
+  padding: 1.6rem 1.5rem 1.3rem;
+  border-radius: 20px;
+  background: rgba(255, 255, 255, 0.04);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  cursor: pointer;
+  overflow: hidden;
+  transition:
+    transform 0.35s var(--ease-rebote),
+    box-shadow 0.35s var(--ease-suave),
+    border-color 0.35s;
+  outline: none;
+}
+
+/* Brillo iridiscente en hover */
+.poema-tarjeta:hover,
+.poema-tarjeta:focus-visible {
+  transform: translateY(-6px) scale(1.01);
+  border-color: var(--color-poema, rgba(255,110,180,0.4));
+  box-shadow:
+    0 20px 50px rgba(0,0,0,0.4),
+    0 0 30px var(--glow-poema, rgba(255,110,180,0.2)),
+    inset 0 1px 0 rgba(255,255,255,0.1);
+}
+
+/* Destello de barrido en hover */
+.poema-tarjeta-brillo {
+  position: absolute;
+  top: 0; left: -100%;
+  width: 60%;
+  height: 100%;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(255,255,255,0.06),
+    transparent
+  );
+  transform: skewX(-15deg);
+  transition: left 0.6s var(--ease-suave);
+  pointer-events: none;
+}
+.poema-tarjeta:hover .poema-tarjeta-brillo { left: 160%; }
+
+/* Línea de color superior */
+.poema-tarjeta::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 2px;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    var(--color-poema, #ff6eb4),
+    transparent
+  );
+  opacity: 0;
+  transition: opacity 0.35s;
+}
+.poema-tarjeta:hover::before { opacity: 1; }
+
+/* Número y sección */
+.poema-numero {
+  font-size: 0.65rem;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: var(--color-poema, rgba(255,110,180,0.8));
+  margin-bottom: 0.6rem;
+  font-weight: 700;
+}
+
+/* Título de la tarjeta */
+.poema-titulo-tarjeta {
+  font-family: var(--fuente-script);
+  font-size: 1.25rem;
+  color: var(--blanco);
+  margin-bottom: 0.9rem;
+  line-height: 1.3;
+  text-shadow: 0 0 20px var(--glow-poema, rgba(255,110,180,0.3));
+}
+
+/* Preview de los primeros 2 versos */
+.poema-preview {
+  margin-bottom: 1.1rem;
+}
+.poema-preview p {
+  font-family: var(--fuente-display);
+  font-style: italic;
+  font-size: 0.82rem;
+  color: rgba(255,255,255,0.55);
+  line-height: 1.7;
+}
+.poema-preview p:first-child { color: rgba(255,255,255,0.7); }
+
+/* Pie de tarjeta */
+.poema-tarjeta-pie {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-top: 0.8rem;
+  border-top: 1px solid rgba(255,255,255,0.06);
+}
+
+.poema-leer-btn {
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 1px;
+  color: var(--color-poema, #ff6eb4);
+  text-transform: uppercase;
+  transition: letter-spacing 0.2s;
+}
+.poema-tarjeta:hover .poema-leer-btn { letter-spacing: 2px; }
+
+.poema-lineas {
+  font-size: 0.62rem;
+  color: rgba(255,255,255,0.2);
+  letter-spacing: 1px;
+}
+
+/* ══════════════════════════════════════════════════════
+   MODAL DE LECTURA
+══════════════════════════════════════════════════════ */
+#modal-poema {
+  position: fixed;
+  inset: 0;
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem;
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity 0.4s var(--ease-suave);
+}
+#modal-poema.activo {
+  pointer-events: all;
+  opacity: 1;
+}
+
+/* Fondo oscuro */
+.modal-fondo {
+  position: absolute;
+  inset: 0;
+  background: rgba(4, 3, 12, 0.88);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  cursor: pointer;
+}
+
+/* Contenedor principal */
+.modal-contenedor {
+  position: relative;
+  width: 100%;
+  max-width: 520px;
+  max-height: 90vh;
+  overflow-y: auto;
+  border-radius: 28px;
+  background: rgba(10, 8, 22, 0.92);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  box-shadow:
+    0 40px 100px rgba(0,0,0,0.7),
+    0 0 0 1px rgba(255,255,255,0.04),
+    0 0 80px var(--glow-modal, rgba(255,110,180,0.15)),
+    inset 0 1px 0 rgba(255,255,255,0.08);
+  padding: 2.5rem 2rem 2rem;
+  transform: translateY(30px) scale(0.96);
+  transition:
+    transform 0.45s var(--ease-rebote),
+    box-shadow 0.45s;
+  scrollbar-width: thin;
+  scrollbar-color: rgba(255,110,180,0.3) transparent;
+}
+.modal-contenedor::-webkit-scrollbar { width: 4px; }
+.modal-contenedor::-webkit-scrollbar-thumb {
+  background: rgba(255,110,180,0.3);
+  border-radius: 2px;
+}
+
+#modal-poema.activo .modal-contenedor {
+  transform: translateY(0) scale(1);
+}
+
+/* Transición entre poemas */
+.modal-contenedor.transicion {
+  opacity: 0.3;
+  transform: translateY(8px) scale(0.98);
+}
+
+/* Borde iridiscente del modal */
+.modal-contenedor::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  padding: 1px;
+  background: linear-gradient(
+    135deg,
+    var(--color-modal, #ff6eb4),
+    rgba(176,106,255,0.5),
+    rgba(106,240,255,0.3),
+    var(--color-modal, #ff6eb4)
+  );
+  background-size: 300% 300%;
+  animation: iridiscente 4s linear infinite;
+  -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+  pointer-events: none;
+}
+
+/* Destellos flotantes */
+.modal-destellos {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  overflow: hidden;
+  border-radius: inherit;
+}
+.modal-destello-item {
+  position: absolute;
+  animation: flotarDestello 3s ease-in-out infinite;
+  opacity: 0;
+}
+@keyframes flotarDestello {
+  0%   { opacity: 0; transform: translateY(0) scale(0.5); }
+  30%  { opacity: 0.7; }
+  70%  { opacity: 0.4; }
+  100% { opacity: 0; transform: translateY(-40px) scale(0.2); }
+}
+
+/* Botón cerrar */
+.modal-cerrar {
+  position: absolute;
+  top: 1rem; right: 1rem;
+  width: 32px; height: 32px;
+  border-radius: 50%;
+  background: rgba(255,255,255,0.07);
+  color: rgba(255,255,255,0.5);
+  font-size: 0.8rem;
+  display: flex; align-items: center; justify-content: center;
+  transition: background 0.2s, color 0.2s, transform 0.2s;
+  z-index: 2;
+}
+.modal-cerrar:hover {
+  background: rgba(255,59,59,0.2);
+  color: #ff6b6b;
+  transform: rotate(90deg) scale(1.1);
+}
+
+/* Cabecera del modal */
+.modal-cabecera {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  margin-bottom: 0.5rem;
+}
+.modal-icono { font-size: 1.4rem; animation: latido 2s ease-in-out infinite; }
+.modal-num {
+  font-size: 0.65rem;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: var(--color-modal, rgba(255,110,180,0.8));
+  font-weight: 700;
+}
+
+/* Título del poema */
+.modal-titulo {
+  font-family: var(--fuente-romantica);
+  font-size: clamp(1.8rem, 5vw, 2.6rem);
+  line-height: 1.2;
+  margin-bottom: 1.8rem;
+  background: linear-gradient(
+    135deg,
+    var(--color-modal, #ff6eb4),
+    rgba(255,255,255,0.9)
+  );
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  text-shadow: none;
+}
+
+/* Versos */
+.modal-versos {
+  margin-bottom: 1.8rem;
+  padding: 1.4rem 1.2rem;
+  border-radius: 16px;
+  background: rgba(255,255,255,0.03);
+  border-left: 3px solid var(--color-modal, #ff6eb4);
+  position: relative;
+}
+.modal-versos::before {
+  content: '"';
+  position: absolute;
+  top: -0.5rem; left: 0.8rem;
+  font-family: var(--fuente-romantica);
+  font-size: 4rem;
+  color: var(--color-modal, #ff6eb4);
+  opacity: 0.2;
+  line-height: 1;
+}
+
+.modal-verso {
+  font-family: var(--fuente-display);
+  font-style: italic;
+  font-size: clamp(0.95rem, 2.5vw, 1.08rem);
+  color: rgba(255,255,255,0.85);
+  line-height: 1.9;
+  opacity: 0;
+  transform: translateX(-12px);
+  animation: versoEntrada 0.5s var(--ease-suave) forwards;
+}
+
+/* Firma */
+.modal-firma {
+  text-align: center;
+  margin-bottom: 1.6rem;
+}
+.modal-firma-texto {
+  font-family: var(--fuente-script);
+  font-size: 1rem;
+  color: rgba(255,255,255,0.35);
+  letter-spacing: 0.5px;
+}
+
+/* Acciones */
+.modal-acciones {
+  display: flex;
+  gap: 0.6rem;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.modal-btn {
+  padding: 0.55rem 1.1rem;
+  border-radius: 50px;
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+  background: rgba(255,255,255,0.06);
+  color: rgba(255,255,255,0.6);
+  border: 1px solid rgba(255,255,255,0.1);
+  transition: background 0.2s, color 0.2s, transform 0.2s, box-shadow 0.2s;
+  display: flex; align-items: center; gap: 0.4rem;
+}
+.modal-btn:hover:not(:disabled) {
+  background: rgba(255,255,255,0.12);
+  color: var(--blanco);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 16px rgba(0,0,0,0.3);
+}
+.modal-btn:disabled {
+  opacity: 0.25;
+  cursor: not-allowed;
+}
+
+.modal-btn-icono { font-size: 0.9rem; }
+
+/* ══ RESPONSIVE ══ */
+@media (max-width: 600px) {
+  .modal-contenedor {
+    padding: 2rem 1.3rem 1.5rem;
+    border-radius: 20px;
+    max-height: 85vh;
+  }
+  .modal-titulo { font-size: 1.8rem; }
+  .modal-verso  { font-size: 0.92rem; }
+  .poemas-grid  { grid-template-columns: repeat(2, 1fr); }
+}

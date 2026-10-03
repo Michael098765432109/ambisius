@@ -1,0 +1,70 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Nunito:wght@300;400;600;700;900&family=Bangers&family=Great+Vibes&family=Dancing+Script:wght@400;700&display=swap');
+
+:root {
+  /* ── Fuentes ── */
+  --fuente-display  : 'Playfair Display', serif;
+  --fuente-cuerpo   : 'Nunito', sans-serif;
+  --fuente-impacto  : 'Bangers', cursive;
+  --fuente-romantica: 'Great Vibes', cursive;
+  --fuente-script   : 'Dancing Script', cursive;
+
+  /* ── Paleta global ── */
+  --negro       : #07070f;
+  --negro-suave : #0e0e1a;
+  --negro-medio : #13131f;
+  --blanco      : #fafafa;
+  --gris        : #888;
+  --gris-oscuro : #333;
+
+  /* ── Glassmorphism Deluxe ── */
+  --glass-bg        : rgba(255, 255, 255, 0.04);
+  --glass-bg-hover  : rgba(255, 255, 255, 0.08);
+  --glass-border    : rgba(255, 255, 255, 0.10);
+  --glass-border-hi : rgba(255, 255, 255, 0.22);
+  --glass-blur      : blur(28px);
+  --glass-blur-sm   : blur(14px);
+
+  /* ── Neón romántico ── */
+  --neon-rosa    : #ff6eb4;
+  --neon-violeta : #b06aff;
+  --neon-cyan    : #6af0ff;
+  --neon-dorado  : #ffd97d;
+  --neon-coral   : #ff8c69;
+
+  /* ── Degradados globales ── */
+  --grad-amor    : linear-gradient(135deg, #ff6eb4 0%, #b06aff 50%, #6af0ff 100%);
+  --grad-oscuro  : linear-gradient(180deg, #07070f 0%, #0e0e1a 60%, #13131f 100%);
+  --grad-vinilo  : radial-gradient(circle at 30% 30%, #2a1a3e, #0a0a0f 70%);
+
+  /* ── Sombras neón ── */
+  --sombra-rosa    : 0 0 20px rgba(255,110,180,0.35), 0 0 60px rgba(255,110,180,0.15);
+  --sombra-violeta : 0 0 20px rgba(176,106,255,0.35), 0 0 60px rgba(176,106,255,0.15);
+  --sombra-amor    : 0 8px 40px rgba(255,110,180,0.2), 0 2px 8px rgba(0,0,0,0.5);
+
+  /* ── Sombras globales ── */
+  --sombra-suave  : 0 4px 24px rgba(0,0,0,0.18);
+  --sombra-media  : 0 8px 40px rgba(0,0,0,0.28);
+  --sombra-fuerte : 0 16px 60px rgba(0,0,0,0.45);
+
+  /* ── Radios ── */
+  --radio-sm : 8px;
+  --radio-md : 16px;
+  --radio-lg : 28px;
+  --radio-xl : 48px;
+  --radio-full: 9999px;
+
+  /* ── Transiciones ── */
+  --ease-suave  : cubic-bezier(0.22, 1, 0.36, 1);
+  --ease-rebote : cubic-bezier(0.34, 1.56, 0.64, 1);
+  --ease-entrada: cubic-bezier(0.4, 0, 0.2, 1);
+  --dur-rapido  : 0.18s;
+  --dur-normal  : 0.35s;
+  --dur-lento   : 0.65s;
+
+  /* ── Z-index ── */
+  --z-fondo    : 0;
+  --z-base     : 1;
+  --z-flotante : 10;
+  --z-modal    : 100;
+  --z-bloqueo  : 9999;
+}

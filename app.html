@@ -1,0 +1,742 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>💖 Para Ti</title>
+  <link rel="stylesheet" href="css/variables.css">
+  <link rel="stylesheet" href="css/base.css">
+  <link rel="stylesheet" href="css/animations.css">
+  <link rel="stylesheet" href="css/app.css">
+  <link rel="stylesheet" href="css/temas/deadpool.css">
+  <link rel="stylesheet" href="css/temas/snoopy.css">
+  <link rel="stylesheet" href="css/temas/blessd.css">
+  <link rel="stylesheet" href="css/temas/hellokitty.css">
+  <link rel="stylesheet" href="css/temas/kuromi.css">
+  <link rel="stylesheet" href="css/temas/stitch.css">
+  <link rel="stylesheet" href="css/temas/sulley.css">
+  <link rel="stylesheet" href="css/temas/lotso.css">
+  <link rel="stylesheet" href="css/temas/pinguinos.css">
+  <link rel="stylesheet" href="css/reproductor.css">
+  <link rel="stylesheet" href="css/cursor.css">
+  <link rel="stylesheet" href="css/poemas.css">
+</head>
+<body class="app-cargando">
+
+<!-- ══ PANTALLA DE CARGA ══ -->
+<div id="pantalla-carga">
+  <div class="carga-contenido">
+    <div class="carga-corazon">💖</div>
+    <div class="carga-barra-wrap"><div class="carga-barra" id="carga-barra"></div></div>
+    <p class="carga-texto">Cargando tu mundo especial...</p>
+  </div>
+</div>
+
+<!-- ══ NAVEGACIÓN LATERAL ══ -->
+<nav id="nav-lateral" aria-label="Navegación de temas">
+  <button class="nav-toggle" id="nav-toggle" aria-label="Abrir menú">☰</button>
+  <div class="nav-panel" id="nav-panel">
+    <p class="nav-titulo">✨ Temas</p>
+    <ul class="nav-lista">
+      <li><button class="nav-item activo" data-tema="deadpool"   data-idx="0">❤️ Deadpool</button></li>
+      <li><button class="nav-item" data-tema="snoopy"     data-idx="1">🐾 Snoopy</button></li>
+      <li><button class="nav-item" data-tema="bless"      data-idx="2">🎤 Blessd</button></li>
+      <li><button class="nav-item" data-tema="hellokitty" data-idx="3">🎀 Hello Kitty</button></li>
+      <li><button class="nav-item" data-tema="kuromi"     data-idx="4">🖤 Kuromi</button></li>
+      <li><button class="nav-item" data-tema="stitch"     data-idx="5">🌊 Stitch</button></li>
+      <li><button class="nav-item" data-tema="sulley"     data-idx="6">💙 Sulley</button></li>
+      <li><button class="nav-item" data-tema="lotso"      data-idx="7">🍓 Lotso</button></li>
+      <li><button class="nav-item" data-tema="pinguinos"  data-idx="8">🐧 Pingüinos</button></li>
+    </ul>
+  </div>
+</nav>
+
+<!-- ══ BARRA INFERIOR MÓVIL ══ -->
+<nav id="nav-inferior" aria-label="Navegación móvil">
+  <button class="nav-inf-item activo" data-tema="deadpool">❤️</button>
+  <button class="nav-inf-item" data-tema="snoopy">🐾</button>
+  <button class="nav-inf-item" data-tema="bless">🎤</button>
+  <button class="nav-inf-item" data-tema="hellokitty">🎀</button>
+  <button class="nav-inf-item" data-tema="kuromi">🖤</button>
+  <button class="nav-inf-item" data-tema="stitch">🌊</button>
+  <button class="nav-inf-item" data-tema="sulley">💙</button>
+  <button class="nav-inf-item" data-tema="lotso">🍓</button>
+  <button class="nav-inf-item" data-tema="pinguinos">🐧</button>
+</nav>
+
+<!-- ══ CONTENIDO PRINCIPAL ══ -->
+<main id="contenido-principal">
+
+  <!-- ── 1. DEADPOOL ── -->
+  <section class="tema-seccion activa" id="tema-deadpool" data-tema="deadpool">
+    <div class="tema-hero deadpool-hero">
+      <div class="dp-particulas" id="dp-particulas"></div>
+      <div class="tema-hero-contenido revelar">
+        <span class="tema-badge dp-badge">❤️ Deadpool</span>
+        <h1 class="tema-titulo dp-titulo">El Amor<br>más Caótico</h1>
+        <p class="tema-subtitulo">Porque contigo hasta el caos tiene sentido</p>
+      </div>
+    </div>
+    <div class="tema-cuerpo">
+      <div class="flip-grid">
+        <div class="flip-card revelar">
+          <div class="flip-inner">
+            <div class="flip-frente dp-card">
+              <span class="flip-icono">💥</span>
+              <h3>Valentía</h3>
+              <p>Toca para ver</p>
+            </div>
+            <div class="flip-dorso dp-card-dorso">
+              <p>Cuando la vida levanta su espada,<br>tu risa me vuelve invencible;<br>por cuidar a mi cachetona amada,<br>cruzaría cualquier imposible.</p>
+            </div>
+          </div>
+        </div>
+        <div class="flip-card revelar">
+          <div class="flip-inner">
+            <div class="flip-frente dp-card">
+              <span class="flip-icono">🗡️</span>
+              <h3>Protección</h3>
+              <p>Toca para ver</p>
+            </div>
+            <div class="flip-dorso dp-card-dorso">
+              <p>Seré refugio en los días de frío,<br>la calma si ruge el temor;<br>mi cachetona, este pecho es tu abrigo,<br>y mi promesa cuidarte con amor.</p>
+            </div>
+          </div>
+        </div>
+        <div class="flip-card revelar">
+          <div class="flip-inner">
+            <div class="flip-frente dp-card">
+              <span class="flip-icono">❤️</span>
+              <h3>Amor Loco</h3>
+              <p>Toca para ver</p>
+            </div>
+            <div class="flip-dorso dp-card-dorso">
+              <p>Soy un caos con traje y canción,<br>pero contigo encuentro sentido;<br>mi cachetona, te doy el corazón,<br>mi aventura favorita sin fin.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="poemas-seccion">
+        <div class="poemas-encabezado">
+          <h2 class="poemas-encabezado-titulo">Poemas para Alexandra</h2>
+          <p class="poemas-encabezado-sub">✦ Toca una tarjeta para leer ✦</p>
+        </div>
+        <div class="poemas-grid" data-seccion="deadpool"></div>
+      </div>
+      <div class="ir-poema-wrap">
+        <a href="proyecto/poema-deadpool.html" class="btn-ir-poema dp-btn-poema">
+          <span class="btn-ir-poema-icono">❤️</span>
+          <span class="btn-ir-poema-texto">Leer mi poema especial</span>
+          <span class="btn-ir-poema-flecha">→</span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── 2. SNOOPY ── -->
+  <section class="tema-seccion" id="tema-snoopy" data-tema="snoopy">
+    <div class="tema-hero snoopy-hero">
+      <div class="tema-hero-contenido revelar">
+        <span class="tema-badge snoopy-badge">🐾 Snoopy</span>
+        <h1 class="tema-titulo snoopy-titulo">Amor Fiel<br>y Eterno</h1>
+        <p class="tema-subtitulo">Como Snoopy, siempre a tu lado sin importar nada</p>
+      </div>
+    </div>
+    <div class="tema-cuerpo">
+      <div class="flip-grid">
+        <div class="flip-card revelar">
+          <div class="flip-inner">
+            <div class="flip-frente snoopy-card">
+              <span class="flip-icono">🌼</span>
+              <h3>Lealtad</h3><p>Toca para ver</p>
+            </div>
+            <div class="flip-dorso snoopy-card-dorso">
+              <p>Sobre el techo, bajo estrellas de abril,<br>guardo tu nombre junto al mío;<br>mi cachetona, contigo soy feliz,<br>y hasta el invierno se vuelve tibio.</p>
+            </div>
+          </div>
+        </div>
+        <div class="flip-card revelar">
+          <div class="flip-inner">
+            <div class="flip-frente snoopy-card">
+              <span class="flip-icono">☁️</span>
+              <h3>Sueños</h3><p>Toca para ver</p>
+            </div>
+            <div class="flip-dorso snoopy-card-dorso">
+              <p>En mis sueños te vuelvo a encontrar,<br>con tu risa pintando el camino;<br>mi cachetona, contigo aprendí a volar,<br>y a llamar hogar a tu cariño.</p>
+            </div>
+          </div>
+        </div>
+        <div class="flip-card revelar">
+          <div class="flip-inner">
+            <div class="flip-frente snoopy-card">
+              <span class="flip-icono">🎵</span>
+              <h3>Alegría</h3><p>Toca para ver</p>
+            </div>
+            <div class="flip-dorso snoopy-card-dorso">
+              <p>Tu risa despierta la mañana,<br>como una canción junto al jardín;<br>mi cachetona, mi alegría más amada,<br>haces bonito todo mi vivir.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="poemas-seccion">
+        <div class="poemas-encabezado">
+          <h2 class="poemas-encabezado-titulo">Poemas para Alexandra</h2>
+          <p class="poemas-encabezado-sub">✦ Toca una tarjeta para leer ✦</p>
+        </div>
+        <div class="poemas-grid" data-seccion="snoopy"></div>
+      </div>
+      <div class="ir-poema-wrap">
+        <a href="proyecto/poema-snoopy.html" class="btn-ir-poema snoopy-btn-poema">
+          <span class="btn-ir-poema-icono">🐾</span>
+          <span class="btn-ir-poema-texto">Leer mi poema especial</span>
+          <span class="btn-ir-poema-flecha">→</span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── 3. BLESSD ── -->
+  <section class="tema-seccion" id="tema-bless" data-tema="bless">
+    <div class="tema-hero blessd-hero">
+      <div class="blessd-stage-bg"></div>
+      <div class="tema-hero-contenido revelar">
+        <span class="tema-badge blessd-badge">🎤 Blessd</span>
+        <h1 class="tema-titulo blessd-titulo">Ritmo<br>y Corazón</h1>
+        <p class="tema-subtitulo">Reggaetón, noches de ciudad y todo el amor para mi cachetona</p>
+      </div>
+    </div>
+    <div class="tema-cuerpo">
+      <div class="flip-grid">
+        <div class="flip-card revelar">
+          <div class="flip-inner">
+            <div class="flip-frente blessd-card">
+              <span class="flip-icono">🎙️</span>
+              <h3>Su música</h3><p>Toca para ver</p>
+            </div>
+            <div class="flip-dorso blessd-card-dorso">
+              <p>Cuando suena la voz de Blessd,<br>tu sonrisa marca el compás;<br>mi cachetona, bailando contigo<br>no necesito nada más.</p>
+            </div>
+          </div>
+        </div>
+        <div class="flip-card revelar">
+          <div class="flip-inner">
+            <div class="flip-frente blessd-card">
+              <span class="flip-icono">🎧</span>
+              <h3>Nuestro ritmo</h3><p>Toca para ver</p>
+            </div>
+            <div class="flip-dorso blessd-card-dorso">
+              <p>Que suene el bajo en la noche,<br>que la ciudad empiece a vibrar;<br>mi cachetona, si bailo contigo,<br>no hay otro sitio al que iría a parar.</p>
+            </div>
+          </div>
+        </div>
+        <div class="flip-card revelar">
+          <div class="flip-inner">
+            <div class="flip-frente blessd-card">
+              <span class="flip-icono">🌃</span>
+              <h3>Noche de concierto</h3><p>Toca para ver</p>
+            </div>
+            <div class="flip-dorso blessd-card-dorso">
+              <p>Se encienden las luces del show,<br>y comienza la gente a cantar;<br>mi cachetona, entre todas las voces,<br>solo a ti te quisiera mirar.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="poemas-seccion">
+        <div class="poemas-encabezado">
+          <h2 class="poemas-encabezado-titulo">Poemas para Alexandra</h2>
+          <p class="poemas-encabezado-sub">✦ Toca una tarjeta para leer ✦</p>
+        </div>
+        <div class="poemas-grid" data-seccion="bless"></div>
+      </div>
+      <div class="ir-poema-wrap">
+        <a href="proyecto/poema-bless.html" class="btn-ir-poema bless-btn-poema">
+          <span class="btn-ir-poema-icono">🎤</span>
+          <span class="btn-ir-poema-texto">Leer mi poema especial</span>
+          <span class="btn-ir-poema-flecha">→</span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── 4. HELLO KITTY ── -->
+  <section class="tema-seccion" id="tema-hellokitty" data-tema="hellokitty">
+    <div class="tema-hero hk-hero">
+      <div class="tema-hero-contenido revelar">
+        <span class="tema-badge hk-badge">🎀 Hello Kitty</span>
+        <h1 class="tema-titulo hk-titulo">Dulce<br>y Especial</h1>
+        <p class="tema-subtitulo">Tan adorable como tú, tan perfecta como este momento</p>
+      </div>
+    </div>
+    <div class="tema-cuerpo">
+      <div class="flip-grid">
+        <div class="flip-card revelar">
+          <div class="flip-inner">
+            <div class="flip-frente hk-card">
+              <span class="flip-icono">🎀</span>
+              <h3>Ternura</h3><p>Toca para ver</p>
+            </div>
+            <div class="flip-dorso hk-card-dorso">
+              <p>Un lazo rosado adorna el día,<br>pero tu sonrisa lo hace especial;<br>mi cachetona, dulce alegría,<br>eres mi regalo más ideal.</p>
+            </div>
+          </div>
+        </div>
+        <div class="flip-card revelar">
+          <div class="flip-inner">
+            <div class="flip-frente hk-card">
+              <span class="flip-icono">🌸</span>
+              <h3>Delicadeza</h3><p>Toca para ver</p>
+            </div>
+            <div class="flip-dorso hk-card-dorso">
+              <p>Cuido tus detalles como una flor,<br>con paciencia, ternura y calor;<br>mi cachetona, en cada pétalo<br>guardo un pedacito de mi amor.</p>
+            </div>
+          </div>
+        </div>
+        <div class="flip-card revelar">
+          <div class="flip-inner">
+            <div class="flip-frente hk-card">
+              <span class="flip-icono">💝</span>
+              <h3>Cariño</h3><p>Toca para ver</p>
+            </div>
+            <div class="flip-dorso hk-card-dorso">
+              <p>Tu nombre ilumina mi corazón,<br>como purpurina bajo el sol;<br>mi cachetona, eres mi canción,<br>mi dulce mundo de color.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="poemas-seccion">
+        <div class="poemas-encabezado">
+          <h2 class="poemas-encabezado-titulo">Poemas para Alexandra</h2>
+          <p class="poemas-encabezado-sub">✦ Toca una tarjeta para leer ✦</p>
+        </div>
+        <div class="poemas-grid" data-seccion="hellokitty"></div>
+      </div>
+      <div class="ir-poema-wrap">
+        <a href="proyecto/poema-hellokitty.html" class="btn-ir-poema hk-btn-poema">
+          <span class="btn-ir-poema-icono">🎠</span>
+          <span class="btn-ir-poema-texto">Leer mi poema especial</span>
+          <span class="btn-ir-poema-flecha">→</span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── 5. KUROMI ── -->
+  <section class="tema-seccion" id="tema-kuromi" data-tema="kuromi">
+    <div class="tema-hero kuromi-hero">
+      <div class="tema-hero-contenido revelar">
+        <span class="tema-badge kuromi-badge">🖤 Kuromi</span>
+        <h1 class="tema-titulo kuromi-titulo">Oscura<br>y Hermosa</h1>
+        <p class="tema-subtitulo">Rebelde por fuera, puro amor por dentro</p>
+      </div>
+    </div>
+    <div class="tema-cuerpo">
+      <div class="flip-grid">
+        <div class="flip-card revelar">
+          <div class="flip-inner">
+            <div class="flip-frente kuromi-card">
+              <span class="flip-icono">🖤</span>
+              <h3>Misterio</h3><p>Toca para ver</p>
+            </div>
+            <div class="flip-dorso kuromi-card-dorso">
+              <p>Tras tu mirada vive un misterio,<br>que siempre quiero descubrir;<br>mi cachetona, mi encanto sincero,<br>contigo me gusta existir.</p>
+            </div>
+          </div>
+        </div>
+        <div class="flip-card revelar">
+          <div class="flip-inner">
+            <div class="flip-frente kuromi-card">
+              <span class="flip-icono">💀</span>
+              <h3>Rebeldía</h3><p>Toca para ver</p>
+            </div>
+            <div class="flip-dorso kuromi-card-dorso">
+              <p>Rebelde, brillante y tan especial,<br>no hay regla que apague tu luz;<br>mi cachetona, te quiero tal cual,<br>con toda tu fuerza y virtud.</p>
+            </div>
+          </div>
+        </div>
+        <div class="flip-card revelar">
+          <div class="flip-inner">
+            <div class="flip-frente kuromi-card">
+              <span class="flip-icono">🌙</span>
+              <h3>Noche</h3><p>Toca para ver</p>
+            </div>
+            <div class="flip-dorso kuromi-card-dorso">
+              <p>Cuando la noche se viste de azul,<br>tu voz me acompaña y me guía;<br>mi cachetona, mi luna y mi luz,<br>mi sueño al final del día.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="poemas-seccion">
+        <div class="poemas-encabezado">
+          <h2 class="poemas-encabezado-titulo">Poemas para Alexandra</h2>
+          <p class="poemas-encabezado-sub">✦ Toca una tarjeta para leer ✦</p>
+        </div>
+        <div class="poemas-grid" data-seccion="kuromi"></div>
+      </div>
+      <div class="ir-poema-wrap">
+        <a href="proyecto/poema-kuromi.html" class="btn-ir-poema kuromi-btn-poema">
+          <span class="btn-ir-poema-icono">🖤</span>
+          <span class="btn-ir-poema-texto">Leer mi poema especial</span>
+          <span class="btn-ir-poema-flecha">→</span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── 6. STITCH ── -->
+  <section class="tema-seccion" id="tema-stitch" data-tema="stitch">
+    <div class="tema-hero stitch-hero">
+      <div class="stitch-burbujas" id="stitch-burbujas"></div>
+      <div class="tema-hero-contenido revelar">
+        <span class="tema-badge stitch-badge">🌊 Stitch</span>
+        <h1 class="tema-titulo stitch-titulo">Ohana<br>Para Siempre</h1>
+        <p class="tema-subtitulo">Ohana significa familia. Y tú eres mi familia</p>
+      </div>
+    </div>
+    <div class="tema-cuerpo">
+      <div class="flip-grid">
+        <div class="flip-card revelar">
+          <div class="flip-inner">
+            <div class="flip-frente stitch-card">
+              <span class="flip-icono">🌊</span>
+              <h3>Ohana</h3><p>Toca para ver</p>
+            </div>
+            <div class="flip-dorso stitch-card-dorso">
+              <p>Ohana es quedarse y cuidar,<br>es caminar siempre unidos;<br>mi cachetona, te voy a acompañar,<br>en todos nuestros caminos.</p>
+            </div>
+          </div>
+        </div>
+        <div class="flip-card revelar">
+          <div class="flip-inner">
+            <div class="flip-frente stitch-card">
+              <span class="flip-icono">🏝️</span>
+              <h3>Aventura</h3><p>Toca para ver</p>
+            </div>
+            <div class="flip-dorso stitch-card-dorso">
+              <p>Contigo navego el ancho mar,<br>cada día es nueva aventura;<br>mi cachetona, contigo explorar<br>hace más bella la vida y más pura.</p>
+            </div>
+          </div>
+        </div>
+        <div class="flip-card revelar">
+          <div class="flip-inner">
+            <div class="flip-frente stitch-card">
+              <span class="flip-icono">💙</span>
+              <h3>Hogar</h3><p>Toca para ver</p>
+            </div>
+            <div class="flip-dorso stitch-card-dorso">
+              <p>No importa la isla ni el lugar,<br>si tu mano acompaña la mía;<br>mi cachetona, mi hogar es tu mirar,<br>mi paz, mi refugio y alegría.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="poemas-seccion">
+        <div class="poemas-encabezado">
+          <h2 class="poemas-encabezado-titulo">Poemas para Alexandra</h2>
+          <p class="poemas-encabezado-sub">✦ Toca una tarjeta para leer ✦</p>
+        </div>
+        <div class="poemas-grid" data-seccion="stitch"></div>
+      </div>
+      <div class="ir-poema-wrap">
+        <a href="proyecto/poema-stitch.html" class="btn-ir-poema stitch-btn-poema">
+          <span class="btn-ir-poema-icono">🌊</span>
+          <span class="btn-ir-poema-texto">Leer mi poema especial</span>
+          <span class="btn-ir-poema-flecha">→</span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── 7. SULLEY ── -->
+  <section class="tema-seccion" id="tema-sulley" data-tema="sulley">
+    <div class="tema-hero sulley-hero">
+      <div class="tema-hero-contenido revelar">
+        <span class="tema-badge sulley-badge">💙 Sulley</span>
+        <h1 class="tema-titulo sulley-titulo">Grande<br>y Tierno</h1>
+        <p class="tema-subtitulo">Por fuera imponente, por dentro todo tuyo</p>
+      </div>
+    </div>
+    <div class="tema-cuerpo">
+      <div class="flip-grid">
+        <div class="flip-card revelar">
+          <div class="flip-inner">
+            <div class="flip-frente sulley-card">
+              <span class="flip-icono">💙</span>
+              <h3>Fuerza</h3><p>Toca para ver</p>
+            </div>
+            <div class="flip-dorso sulley-card-dorso">
+              <p>Mi fuerza se vuelve ternura,<br>si se trata de verte feliz;<br>mi cachetona, seré tu armadura,<br>y el abrazo que elijas sentir.</p>
+            </div>
+          </div>
+        </div>
+        <div class="flip-card revelar">
+          <div class="flip-inner">
+            <div class="flip-frente sulley-card">
+              <span class="flip-icono">🚪</span>
+              <h3>Puertas</h3><p>Toca para ver</p>
+            </div>
+            <div class="flip-dorso sulley-card-dorso">
+              <p>Abriría mil puertas del cielo,<br>cruzaría la noche y el mar;<br>mi cachetona, mi dulce consuelo,<br>siempre te vuelvo a encontrar.</p>
+            </div>
+          </div>
+        </div>
+        <div class="flip-card revelar">
+          <div class="flip-inner">
+            <div class="flip-frente sulley-card">
+              <span class="flip-icono">😄</span>
+              <h3>Risa</h3><p>Toca para ver</p>
+            </div>
+            <div class="flip-dorso sulley-card-dorso">
+              <p>Tu risa despierta colores,<br>y aleja la sombra y el frío;<br>mi cachetona, entre mil amores,<br>el más grande es el mío contigo.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="poemas-seccion">
+        <div class="poemas-encabezado">
+          <h2 class="poemas-encabezado-titulo">Poemas para Alexandra</h2>
+          <p class="poemas-encabezado-sub">✦ Toca una tarjeta para leer ✦</p>
+        </div>
+        <div class="poemas-grid" data-seccion="sulley"></div>
+      </div>
+      <div class="ir-poema-wrap">
+        <a href="proyecto/poema-sulley.html" class="btn-ir-poema sulley-btn-poema">
+          <span class="btn-ir-poema-icono">💫</span>
+          <span class="btn-ir-poema-texto">Leer mi poema especial</span>
+          <span class="btn-ir-poema-flecha">→</span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── 8. LOTSO ── -->
+  <section class="tema-seccion" id="tema-lotso" data-tema="lotso">
+    <div class="tema-hero lotso-hero">
+      <div class="tema-hero-contenido revelar">
+        <span class="tema-badge lotso-badge">🍓 Lotso</span>
+        <h1 class="tema-titulo lotso-titulo">Dulce<br>como Fresa</h1>
+        <p class="tema-subtitulo">Cálido, suave y completamente tuyo</p>
+      </div>
+    </div>
+    <div class="tema-cuerpo">
+      <div class="flip-grid">
+        <div class="flip-card revelar">
+          <div class="flip-inner">
+            <div class="flip-frente lotso-card">
+              <span class="flip-icono">🍓</span>
+              <h3>Dulzura</h3><p>Toca para ver</p>
+            </div>
+            <div class="flip-dorso lotso-card-dorso">
+              <p>Tu dulzura perfuma el jardín,<br>como fresas al sol de verano;<br>mi cachetona, mi amor sin fin,<br>qué bonito es tenerte en mi mano.</p>
+            </div>
+          </div>
+        </div>
+        <div class="flip-card revelar">
+          <div class="flip-inner">
+            <div class="flip-frente lotso-card">
+              <span class="flip-icono">🌸</span>
+              <h3>Calidez</h3><p>Toca para ver</p>
+            </div>
+            <div class="flip-dorso lotso-card-dorso">
+              <p>En tus brazos descansa mi prisa,<br>y se calma cualquier preocupación;<br>mi cachetona, tu abrazo y tu risa<br>son abrigo para el corazón.</p>
+            </div>
+          </div>
+        </div>
+        <div class="flip-card revelar">
+          <div class="flip-inner">
+            <div class="flip-frente lotso-card">
+              <span class="flip-icono">💗</span>
+              <h3>Abrazo</h3><p>Toca para ver</p>
+            </div>
+            <div class="flip-dorso lotso-card-dorso">
+              <p>Que no termine nunca el abrazo,<br>que se quede cerquita de mí;<br>mi cachetona, en tu regazo<br>está todo lo que elegí.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="poemas-seccion">
+        <div class="poemas-encabezado">
+          <h2 class="poemas-encabezado-titulo">Poemas para Alexandra</h2>
+          <p class="poemas-encabezado-sub">✦ Toca una tarjeta para leer ✦</p>
+        </div>
+        <div class="poemas-grid" data-seccion="lotso"></div>
+      </div>
+      <div class="ir-poema-wrap">
+        <a href="proyecto/poema-lotso.html" class="btn-ir-poema lotso-btn-poema">
+          <span class="btn-ir-poema-icono">🍓</span>
+          <span class="btn-ir-poema-texto">Leer mi poema especial</span>
+          <span class="btn-ir-poema-flecha">→</span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── 9. PINGÜINOS ── -->
+  <section class="tema-seccion" id="tema-pinguinos" data-tema="pinguinos">
+    <div class="tema-hero ping-hero">
+      <div class="ping-hielo" id="ping-hielo"></div>
+      <div class="tema-hero-contenido revelar">
+        <span class="tema-badge ping-badge">🐧 Pingüinos</span>
+        <h1 class="tema-titulo ping-titulo">Amor<br>Polar</h1>
+        <p class="tema-subtitulo">Fiel como un pingüino, para toda la vida</p>
+      </div>
+    </div>
+    <div class="tema-cuerpo">
+      <div class="flip-grid">
+        <div class="flip-card revelar">
+          <div class="flip-inner">
+            <div class="flip-frente ping-card">
+              <span class="flip-icono">🐧</span>
+              <h3>Fidelidad</h3><p>Toca para ver</p>
+            </div>
+            <div class="flip-dorso ping-card-dorso">
+              <p>Como pingüinos sobre el hielo,<br>yo te elijo una y otra vez;<br>mi cachetona, mi amor más sincero,<br>contigo la vida se siente al revés.</p>
+            </div>
+          </div>
+        </div>
+        <div class="flip-card revelar">
+          <div class="flip-inner">
+            <div class="flip-frente ping-card">
+              <span class="flip-icono">❄️</span>
+              <h3>Pureza</h3><p>Toca para ver</p>
+            </div>
+            <div class="flip-dorso ping-card-dorso">
+              <p>La nieve conserva su blancura,<br>mi promesa conserva su voz;<br>mi cachetona, mi amor y ternura,<br>voy contigo, siempre los dos.</p>
+            </div>
+          </div>
+        </div>
+        <div class="flip-card revelar">
+          <div class="flip-inner">
+            <div class="flip-frente ping-card">
+              <span class="flip-icono">🌊</span>
+              <h3>Juntos</h3><p>Toca para ver</p>
+            </div>
+            <div class="flip-dorso ping-card-dorso">
+              <p>Si la corriente nos quiere llevar,<br>juntos podremos seguir;<br>mi cachetona, contigo hasta el mar,<br>y a tu lado quiero vivir.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="poemas-seccion">
+        <div class="poemas-encabezado">
+          <h2 class="poemas-encabezado-titulo">Poemas para Alexandra</h2>
+          <p class="poemas-encabezado-sub">✦ Toca una tarjeta para leer ✦</p>
+        </div>
+        <div class="poemas-grid" data-seccion="pinguinos"></div>
+      </div>
+      <div class="ir-poema-wrap">
+        <a href="proyecto/poema-pinguinos.html" class="btn-ir-poema ping-btn-poema">
+          <span class="btn-ir-poema-icono">🐧</span>
+          <span class="btn-ir-poema-texto">Leer mi poema especial</span>
+          <span class="btn-ir-poema-flecha">→</span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<!-- ══ CANVAS PARTÍCULAS ══ -->
+<canvas id="canvas-particulas"></canvas>
+
+<!-- ══ CONTADOR DE AMOR ══ -->
+<div id="contador-amor">
+  <span class="contador-icono">💖</span>
+  <div class="contador-unidades">
+    <div class="contador-bloque">
+      <span class="contador-numero" id="cnt-dias">00</span>
+      <span class="contador-label">días</span>
+    </div>
+    <span class="contador-sep">:</span>
+    <div class="contador-bloque">
+      <span class="contador-numero" id="cnt-horas">00</span>
+      <span class="contador-label">horas</span>
+    </div>
+    <span class="contador-sep">:</span>
+    <div class="contador-bloque">
+      <span class="contador-numero" id="cnt-minutos">00</span>
+      <span class="contador-label">min</span>
+    </div>
+    <span class="contador-sep">:</span>
+    <div class="contador-bloque">
+      <span class="contador-numero" id="cnt-segundos">00</span>
+      <span class="contador-label">seg</span>
+    </div>
+  </div>
+</div>
+
+<!-- ══ REPRODUCTOR FLOTANTE ══ -->
+<div id="reproductor">
+  <div class="reproductor-cuerpo">
+    <button class="btn-minimizar" id="btn-minimizar" aria-label="Minimizar">−</button>
+
+    <!-- Vinilo + Info -->
+    <div class="reproductor-vinilo-wrap">
+      <div class="vinilo">
+        <div class="vinilo-disco">
+          <div class="vinilo-centro">♪</div>
+        </div>
+      </div>
+      <div class="reproductor-info">
+        <div class="reproductor-cancion">Cargando...</div>
+        <div class="reproductor-artista">♪ Música romántica</div>
+        <div class="reproductor-num-cancion">1 / 13</div>
+      </div>
+    </div>
+
+    <!-- Ecualizador 12 barras -->
+    <div class="ecualizador pausado">
+      <div class="eq-barra"></div><div class="eq-barra"></div>
+      <div class="eq-barra"></div><div class="eq-barra"></div>
+      <div class="eq-barra"></div><div class="eq-barra"></div>
+      <div class="eq-barra"></div><div class="eq-barra"></div>
+      <div class="eq-barra"></div><div class="eq-barra"></div>
+      <div class="eq-barra"></div><div class="eq-barra"></div>
+    </div>
+
+    <!-- Progreso -->
+    <div class="progreso-wrap" role="slider" tabindex="0" aria-label="Progreso de reproducción" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0">
+      <div class="progreso-fill"></div>
+    </div>
+    <div class="progreso-tiempos">
+      <span class="tiempo-actual">0:00</span>
+      <span class="tiempo-total">0:00</span>
+    </div>
+
+    <!-- Controles -->
+    <div class="reproductor-controles">
+      <button class="btn-control" id="btn-shuffle"  title="Aleatorio">🔀</button>
+      <button class="btn-control" id="btn-anterior" aria-label="Anterior">⏮</button>
+      <button class="btn-control btn-play-pausa" id="btn-play-pausa" aria-label="Play">▶</button>
+      <button class="btn-control" id="btn-siguiente" aria-label="Siguiente">⏭</button>
+      <button class="btn-control" id="btn-repeat"   title="Repetir">🔁</button>
+    </div>
+
+    <!-- Volumen -->
+    <div class="volumen-wrap">
+      <span class="volumen-icono" title="Silenciar">🔊</span>
+      <input type="range" class="volumen-slider" min="0" max="1" step="0.02" value="0.8">
+    </div>
+
+    <!-- Playlist toggle -->
+    <button class="btn-playlist-toggle" id="btn-playlist-toggle">
+      <span>🎵 Lista de reproducción</span>
+      <span class="flecha">▼</span>
+    </button>
+  </div>
+
+  <!-- Panel playlist -->
+  <div class="playlist-panel">
+    <div class="playlist-lista"></div>
+  </div>
+
+  <!-- Botón flotante minimizado -->
+  <button class="btn-flotante-musica" aria-label="Abrir reproductor">🎵</button>
+</div>
+
+<script src="js/particulas.js"></script>
+<script src="js/contador.js"></script>
+<script src="js/reproductor.js"></script>
+<script src="js/navegacion.js"></script>
+<script src="js/cursor.js"></script>
+<script src="js/poemas.js"></script>
+</body>
+</html>

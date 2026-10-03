@@ -1,0 +1,242 @@
+/* ══════════════════════════════════════════
+   PANTALLA DE BLOQUEO
+══════════════════════════════════════════ */
+
+/* ── Fondo animado ── */
+#pantalla-bloqueo {
+  position: fixed; inset: 0;
+  z-index: var(--z-bloqueo);
+  display: flex; align-items: center; justify-content: center;
+  overflow: hidden;
+  background: radial-gradient(ellipse at 30% 40%, #1a0030 0%, #0a0a0f 60%);
+  transition: opacity 0.9s var(--ease-suave);
+}
+
+#pantalla-bloqueo.desbloqueando {
+  animation: desbloqueoExplosion 0.9s var(--ease-suave) forwards;
+}
+
+/* Orbes de fondo */
+.orbe {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(80px);
+  opacity: 0.35;
+  animation: flotar ease-in-out infinite;
+  pointer-events: none;
+}
+.orbe-1 {
+  width: 500px; height: 500px;
+  background: radial-gradient(circle, #7c3aed, transparent);
+  top: -150px; left: -150px;
+  animation-duration: 8s;
+}
+.orbe-2 {
+  width: 400px; height: 400px;
+  background: radial-gradient(circle, #db2777, transparent);
+  bottom: -100px; right: -100px;
+  animation-duration: 10s; animation-delay: -3s;
+}
+.orbe-3 {
+  width: 300px; height: 300px;
+  background: radial-gradient(circle, #2563eb, transparent);
+  top: 50%; left: 50%; transform: translate(-50%,-50%);
+  animation-duration: 12s; animation-delay: -6s;
+}
+
+/* Partículas de corazones flotantes de fondo */
+#particulas-bloqueo {
+  position: absolute; inset: 0;
+  pointer-events: none; overflow: hidden;
+}
+.particula-corazon {
+  position: absolute;
+  font-size: 1rem;
+  opacity: 0;
+  animation: particula linear infinite;
+}
+
+/* ── Tarjeta central ── */
+.tarjeta-bloqueo {
+  position: relative; z-index: 2;
+  width: min(420px, 92vw);
+  padding: 3rem 2.5rem;
+  border-radius: var(--radio-xl);
+  background: rgba(255,255,255,0.05);
+  backdrop-filter: blur(24px);
+  -webkit-backdrop-filter: blur(24px);
+  border: 1px solid rgba(255,255,255,0.12);
+  box-shadow: 0 24px 80px rgba(0,0,0,0.5), inset 0 1px 0 rgba(255,255,255,0.15);
+  text-align: center;
+  animation: entradaRebote 0.8s var(--ease-rebote) both;
+}
+
+/* Icono corazón animado */
+.icono-corazon {
+  font-size: 4rem;
+  display: block;
+  margin: 0 auto 1.5rem;
+  animation: latido 1.8s ease-in-out infinite;
+  filter: drop-shadow(0 0 20px rgba(236,72,153,0.7));
+}
+
+/* Título */
+.titulo-bloqueo {
+  font-family: var(--fuente-display);
+  font-size: clamp(1.6rem, 5vw, 2.2rem);
+  font-weight: 700;
+  background: linear-gradient(135deg, #f9a8d4, #c084fc, #818cf8);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  margin-bottom: 0.5rem;
+  line-height: 1.2;
+}
+
+.subtitulo-bloqueo {
+  font-size: 0.85rem;
+  color: rgba(255,255,255,0.4);
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  margin-bottom: 2.5rem;
+}
+
+/* ── Campo de contraseña ── */
+.campo-contrasena-wrap {
+  position: relative;
+  margin-bottom: 1.2rem;
+}
+
+.campo-contrasena {
+  width: 100%;
+  padding: 1rem 3.5rem 1rem 1.4rem;
+  background: rgba(255,255,255,0.07);
+  border: 1.5px solid rgba(255,255,255,0.15);
+  border-radius: var(--radio-lg);
+  color: var(--blanco);
+  font-family: var(--fuente-cuerpo);
+  font-size: 1.1rem;
+  letter-spacing: 4px;
+  text-align: center;
+  outline: none;
+  transition: border-color var(--dur-normal), box-shadow var(--dur-normal);
+}
+
+.campo-contrasena::placeholder {
+  letter-spacing: 2px;
+  color: rgba(255,255,255,0.25);
+  font-size: 0.9rem;
+}
+
+.campo-contrasena:focus {
+  border-color: rgba(192,132,252,0.6);
+  box-shadow: 0 0 0 3px rgba(192,132,252,0.15), 0 0 20px rgba(192,132,252,0.1);
+}
+
+.campo-contrasena.error {
+  border-color: rgba(239,68,68,0.7);
+  box-shadow: 0 0 0 3px rgba(239,68,68,0.15);
+  animation: sacudida 0.5s ease both;
+}
+
+.campo-contrasena.exito {
+  border-color: rgba(52,211,153,0.7);
+  box-shadow: 0 0 0 3px rgba(52,211,153,0.15), 0 0 20px rgba(52,211,153,0.2);
+}
+
+/* Ojo para mostrar/ocultar */
+.btn-ojo {
+  position: absolute; right: 1rem; top: 50%;
+  transform: translateY(-50%);
+  color: rgba(255,255,255,0.35);
+  font-size: 1.1rem;
+  transition: color var(--dur-rapido);
+  background: none; border: none; cursor: pointer;
+  padding: 0.2rem;
+}
+.btn-ojo:hover { color: rgba(255,255,255,0.7); }
+
+/* ── Botón desbloquear ── */
+.btn-desbloquear {
+  width: 100%;
+  padding: 1rem;
+  border-radius: var(--radio-lg);
+  background: linear-gradient(135deg, #7c3aed, #db2777);
+  color: #fff;
+  font-family: var(--fuente-cuerpo);
+  font-size: 1rem;
+  font-weight: 700;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  border: none;
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+  transition: transform var(--dur-rapido), box-shadow var(--dur-normal);
+  box-shadow: 0 4px 20px rgba(124,58,237,0.4);
+}
+
+.btn-desbloquear::before {
+  content: '';
+  position: absolute; inset: 0;
+  background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+  transform: translateX(-100%) skewX(-15deg);
+  transition: none;
+}
+.btn-desbloquear:hover::before {
+  animation: destelloBarrido 0.5s ease forwards;
+}
+.btn-desbloquear:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 30px rgba(124,58,237,0.55);
+}
+.btn-desbloquear:active { transform: translateY(0); }
+
+/* ── Mensaje de error ── */
+.mensaje-error {
+  margin-top: 1rem;
+  font-size: 0.82rem;
+  color: rgba(252,165,165,0.9);
+  letter-spacing: 1px;
+  min-height: 1.2rem;
+  transition: opacity var(--dur-normal);
+}
+
+/* ── Pista ── */
+.pista-bloqueo {
+  margin-top: 1.8rem;
+  padding-top: 1.5rem;
+  border-top: 1px solid rgba(255,255,255,0.08);
+  font-size: 0.78rem;
+  color: rgba(255,255,255,0.2);
+  letter-spacing: 1px;
+  line-height: 1.6;
+}
+.pista-bloqueo span {
+  color: rgba(192,132,252,0.5);
+}
+
+/* ── Flash de desbloqueo ── */
+#flash-desbloqueo {
+  position: fixed; inset: 0;
+  background: #fff;
+  z-index: calc(var(--z-bloqueo) + 1);
+  pointer-events: none;
+  opacity: 0;
+}
+#flash-desbloqueo.activo {
+  animation: destelloBlanco 0.6s ease forwards;
+}
+
+/* ── Corazones de celebración ── */
+#corazones-celebracion {
+  position: fixed; inset: 0;
+  pointer-events: none;
+  z-index: calc(var(--z-bloqueo) + 2);
+  overflow: hidden;
+}
+.corazon-celebracion {
+  position: absolute;
+  font-size: 1.5rem;
+  animation: corazonVolar 1.2s var(--ease-suave) forwards;
+}

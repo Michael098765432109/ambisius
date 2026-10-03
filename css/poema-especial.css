@@ -1,0 +1,312 @@
+/* ══════════════════════════════════════════════════════
+   BOTÓN "LEER MI POEMA ESPECIAL" — en app.html
+══════════════════════════════════════════════════════ */
+.ir-poema-wrap {
+  display: flex;
+  justify-content: center;
+  padding: 2.5rem 1rem 4rem;
+}
+
+.btn-ir-poema {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.8rem;
+  padding: 1rem 2.2rem;
+  border-radius: 60px;
+  font-family: var(--fuente-script);
+  font-size: 1.3rem;
+  font-weight: 700;
+  text-decoration: none;
+  position: relative;
+  overflow: hidden;
+  transition: transform 0.35s var(--ease-rebote), box-shadow 0.35s;
+  border: 1px solid rgba(255,255,255,0.15);
+}
+
+/* Destello de barrido */
+.btn-ir-poema::before {
+  content: '';
+  position: absolute;
+  top: 0; left: -80%;
+  width: 60%; height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255,255,255,0.18), transparent);
+  transform: skewX(-15deg);
+  transition: left 0.6s var(--ease-suave);
+}
+.btn-ir-poema:hover::before { left: 140%; }
+.btn-ir-poema:hover { transform: translateY(-4px) scale(1.03); }
+
+.btn-ir-poema-icono { font-size: 1.5rem; animation: latido 2s ease-in-out infinite; }
+.btn-ir-poema-flecha {
+  font-size: 1.1rem;
+  transition: transform 0.3s var(--ease-rebote);
+}
+.btn-ir-poema:hover .btn-ir-poema-flecha { transform: translateX(6px); }
+
+/* Variantes por tema */
+.dp-btn-poema {
+  background: linear-gradient(135deg, #9b1c1c, #e63946);
+  color: #fff;
+  box-shadow: 0 8px 30px rgba(230,57,70,0.4), 0 0 60px rgba(230,57,70,0.15);
+}
+.dp-btn-poema:hover { box-shadow: 0 14px 40px rgba(230,57,70,0.6), 0 0 80px rgba(230,57,70,0.2); }
+
+.snoopy-btn-poema {
+  background: linear-gradient(135deg, #d97706, #f59e0b);
+  color: #1a1a2e;
+  box-shadow: 0 8px 30px rgba(245,158,11,0.4), 0 0 60px rgba(245,158,11,0.15);
+}
+.snoopy-btn-poema:hover { box-shadow: 0 14px 40px rgba(245,158,11,0.6); }
+
+.bless-btn-poema {
+  background: linear-gradient(135deg, #981b37, #ef4058);
+  color: #fff;
+  box-shadow: 0 8px 30px rgba(239,64,88,0.4), 0 0 60px rgba(239,64,88,0.15);
+}
+.bless-btn-poema:hover { box-shadow: 0 14px 40px rgba(239,64,88,0.6); }
+
+.hk-btn-poema {
+  background: linear-gradient(135deg, #be185d, #ec4899);
+  color: #fff;
+  box-shadow: 0 8px 30px rgba(236,72,153,0.4), 0 0 60px rgba(236,72,153,0.15);
+}
+.hk-btn-poema:hover { box-shadow: 0 14px 40px rgba(236,72,153,0.6); }
+
+.kuromi-btn-poema {
+  background: linear-gradient(135deg, #4c1d95, #e879f9);
+  color: #fff;
+  box-shadow: 0 8px 30px rgba(232,121,249,0.4), 0 0 60px rgba(232,121,249,0.15);
+}
+.kuromi-btn-poema:hover { box-shadow: 0 14px 40px rgba(232,121,249,0.6); }
+
+.stitch-btn-poema {
+  background: linear-gradient(135deg, #0284c7, #38bdf8);
+  color: #fff;
+  box-shadow: 0 8px 30px rgba(56,189,248,0.4), 0 0 60px rgba(56,189,248,0.15);
+}
+.stitch-btn-poema:hover { box-shadow: 0 14px 40px rgba(56,189,248,0.6); }
+
+.sulley-btn-poema {
+  background: linear-gradient(135deg, #1d4ed8, #60a5fa);
+  color: #fff;
+  box-shadow: 0 8px 30px rgba(96,165,250,0.4), 0 0 60px rgba(96,165,250,0.15);
+}
+.sulley-btn-poema:hover { box-shadow: 0 14px 40px rgba(96,165,250,0.6); }
+
+.lotso-btn-poema {
+  background: linear-gradient(135deg, #be123c, #f472b6);
+  color: #fff;
+  box-shadow: 0 8px 30px rgba(244,114,182,0.4), 0 0 60px rgba(244,114,182,0.15);
+}
+.lotso-btn-poema:hover { box-shadow: 0 14px 40px rgba(244,114,182,0.6); }
+
+.ping-btn-poema {
+  background: linear-gradient(135deg, #0369a1, #7dd3fc);
+  color: #fff;
+  box-shadow: 0 8px 30px rgba(125,211,252,0.4), 0 0 60px rgba(125,211,252,0.15);
+}
+.ping-btn-poema:hover { box-shadow: 0 14px 40px rgba(125,211,252,0.6); }
+
+
+/* ══════════════════════════════════════════════════════
+   PÁGINAS DE POEMA ESPECIAL — estilos base compartidos
+══════════════════════════════════════════════════════ */
+.poema-pagina {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 3rem 1.5rem 5rem;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Fondo de partículas flotantes */
+.poema-pagina-fondo {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 0;
+}
+.poema-pagina-fondo-particula {
+  position: absolute;
+  font-size: 1.2rem;
+  opacity: 0;
+  animation: particulaFondo linear infinite;
+}
+@keyframes particulaFondo {
+  0%   { opacity: 0;   transform: translateY(100vh) scale(0.5) rotate(0deg); }
+  10%  { opacity: 0.6; }
+  90%  { opacity: 0.4; }
+  100% { opacity: 0;   transform: translateY(-10vh) scale(1) rotate(360deg); }
+}
+
+/* Botón volver */
+.poema-volver {
+  position: fixed;
+  top: 1.2rem;
+  left: 1.2rem;
+  z-index: 100;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.55rem 1.1rem;
+  border-radius: 50px;
+  background: rgba(255,255,255,0.07);
+  backdrop-filter: blur(14px);
+  border: 1px solid rgba(255,255,255,0.12);
+  color: rgba(255,255,255,0.7);
+  font-size: 0.8rem;
+  font-weight: 700;
+  letter-spacing: 1px;
+  text-decoration: none;
+  text-transform: uppercase;
+  transition: background 0.2s, color 0.2s, transform 0.2s;
+}
+.poema-volver:hover {
+  background: rgba(255,255,255,0.14);
+  color: #fff;
+  transform: translateX(-3px);
+}
+
+/* Tarjeta principal del poema */
+.poema-especial-card {
+  position: relative;
+  z-index: 1;
+  width: 100%;
+  max-width: 680px;
+  padding: 3rem 2.5rem;
+  border-radius: 32px;
+  background: rgba(8, 6, 18, 0.78);
+  backdrop-filter: blur(28px);
+  -webkit-backdrop-filter: blur(28px);
+  border: 1px solid rgba(255,255,255,0.08);
+  box-shadow:
+    0 40px 100px rgba(0,0,0,0.6),
+    inset 0 1px 0 rgba(255,255,255,0.07);
+  animation: aparecerDesdeAbajo 0.8s var(--ease-rebote) both;
+}
+
+/* Borde iridiscente */
+.poema-especial-card::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  padding: 1px;
+  background: linear-gradient(135deg,
+    var(--color-tema, #ff6eb4),
+    rgba(176,106,255,0.5),
+    rgba(106,240,255,0.3),
+    var(--color-tema, #ff6eb4));
+  background-size: 300% 300%;
+  animation: iridiscenteGlobal 5s linear infinite;
+  -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+  pointer-events: none;
+}
+
+/* Encabezado */
+.poema-especial-header {
+  text-align: center;
+  margin-bottom: 2.5rem;
+}
+.poema-especial-icono {
+  font-size: 3.5rem;
+  display: block;
+  margin-bottom: 0.8rem;
+  animation: flotarSuave 4s ease-in-out infinite;
+}
+.poema-especial-para {
+  font-family: var(--fuente-romantica);
+  font-size: 1rem;
+  color: rgba(255,255,255,0.35);
+  letter-spacing: 1px;
+  margin-bottom: 0.5rem;
+}
+.poema-especial-titulo {
+  font-family: var(--fuente-romantica);
+  font-size: clamp(2.2rem, 6vw, 3.8rem);
+  line-height: 1.15;
+  background: linear-gradient(135deg, var(--color-tema, #ff6eb4), rgba(255,255,255,0.9));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* Separador decorativo */
+.poema-especial-sep {
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+  margin: 0 auto 2rem;
+  width: fit-content;
+}
+.poema-especial-sep::before,
+.poema-especial-sep::after {
+  content: '';
+  width: 60px;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, var(--color-tema, #ff6eb4));
+}
+.poema-especial-sep::after {
+  background: linear-gradient(90deg, var(--color-tema, #ff6eb4), transparent);
+}
+.poema-especial-sep-icono { font-size: 0.9rem; }
+
+/* Cuerpo del poema */
+.poema-especial-cuerpo {
+  padding: 1.8rem 1.5rem;
+  border-radius: 18px;
+  background: rgba(255,255,255,0.03);
+  border-left: 3px solid var(--color-tema, #ff6eb4);
+  margin-bottom: 2rem;
+  position: relative;
+}
+.poema-especial-cuerpo::before {
+  content: '"';
+  position: absolute;
+  top: -1rem; left: 1rem;
+  font-family: var(--fuente-romantica);
+  font-size: 5rem;
+  color: var(--color-tema, #ff6eb4);
+  opacity: 0.15;
+  line-height: 1;
+  pointer-events: none;
+}
+
+.poema-especial-verso {
+  font-family: var(--fuente-display);
+  font-style: italic;
+  font-size: clamp(1rem, 2.5vw, 1.15rem);
+  color: rgba(255,255,255,0.88);
+  line-height: 2;
+  display: block;
+  opacity: 0;
+  transform: translateX(-16px);
+  animation: versoEntrada 0.6s var(--ease-suave) forwards;
+}
+.poema-especial-estrofa {
+  margin-bottom: 1.4rem;
+}
+.poema-especial-estrofa:last-child { margin-bottom: 0; }
+
+/* Firma */
+.poema-especial-firma {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+.poema-especial-firma-texto {
+  font-family: var(--fuente-script);
+  font-size: 1.1rem;
+  color: rgba(255,255,255,0.35);
+}
+
+/* Responsive */
+@media (max-width: 600px) {
+  .poema-especial-card { padding: 2rem 1.3rem; border-radius: 20px; }
+  .poema-especial-titulo { font-size: 2rem; }
+  .poema-especial-verso { font-size: 0.95rem; }
+}
